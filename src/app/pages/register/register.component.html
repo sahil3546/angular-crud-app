@@ -1,0 +1,95 @@
+<header class="header">
+    <nav class="navbar navbar-expand-lg navbar-light py-3">
+        <div class="container">
+            <a href="#" class="navbar-brand">
+                <img src="../../../assets/img/1571242418823.jfif" alt="logo" width="150">
+            </a>
+        </div>
+    </nav>
+</header>
+
+<div class="container">
+    <div class="row py-3 mt-4 align-items-center">
+        <div class="col-md-5 pr-lg-5 mb-5 mb-md-0">
+            <h2>Book a demo today and get two weeks for free. Why?</h2>
+            <p class="font-italic text-muted mb-0">Because Our AI-Powered Software Will Exceed Your Marketing Goals</p>
+            <img src="../../../assets/img/laptop.jpg" alt="" class="img-fluid mb-3 d-none d-md-block">
+        </div>
+
+        <div class="col-md-5 ml-auto">
+            <div class="card card-4">
+                <div class="card-body">
+                    <h2 class="title">We'll be in touch to get your trial set up.</h2>
+
+                    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+                        <div class="row">
+
+                            <div class="input-group col-lg-6 mb-3">
+                                <input type="text" formControlName="firstName" placeholder="First Name *"
+                                    class="form-control"
+                                    [ngClass]="{ 'is-invalid': f.firstName.touched && f.firstName.errors }"
+                                    maxlength="16" />
+                                <div *ngIf="f.firstName.errors" class="invalid-feedback">
+                                    <div *ngIf="f.firstName.errors.required">First Name is required.</div>
+                                </div>
+                            </div>
+
+                            <div class="input-group col-lg-6 mb-3">
+
+                                <input type="text" placeholder="Last Name *" class="form-control"
+                                    formControlName="lastName"
+                                    [ngClass]="{ 'is-invalid': f.lastName.touched && f.lastName.errors }"
+                                    maxlength="16" />
+                                <div *ngIf="f.lastName.errors" class="invalid-feedback">
+                                    <div *ngIf="f.lastName.errors.required">Last Name is required.</div>
+                                </div>
+                            </div>
+
+                            <div class="input-group col-lg-12 mb-3">
+
+                                <input type="email" placeholder="Email Address *" class="form-control"
+                                    formControlName="email"
+                                    [ngClass]="{ 'is-invalid': f.email.touched && f.email.errors }" maxlength="16" />
+                                <div *ngIf="f.email.errors" class="invalid-feedback">
+                                    <div *ngIf="f.email.errors.required">Email is required.</div>
+                                    <div *ngIf="f.email.errors.pattern">Enter valid email only.</div>
+                                </div>
+                            </div>
+
+                            <div class="input-group col-lg-12 mb-3">
+
+                                <input type="text" placeholder="Monthly Advertising Budget *" class="form-control"
+                                    formControlName="budget"
+                                    [ngClass]="{ 'is-invalid': f.budget.touched && f.budget.errors }" maxlength="16" />
+                                <div *ngIf="f.budget.errors" class="invalid-feedback">
+                                    <div *ngIf="f.budget.errors.required">Monthly Advertising Budget is required.</div>
+                                    <div *ngIf="f.budget.errors.pattern">Enter only number.</div>
+                                </div>
+                            </div>
+
+                            <div class="input-group col-lg-12 mb-3">
+                                <input type="tel" placeholder="Phone Number *" class="form-control"
+                                    formControlName="phone"
+                                    [ngClass]="{ 'is-invalid': f.phone.touched && f.phone.errors }" maxlength="10" />
+                                <div *ngIf="f.phone.errors" class="invalid-feedback">
+                                    <div *ngIf="f.phone.errors.required">Phone is required.</div>
+                                    <div *ngIf="f.phone.errors.pattern">Enter only number.</div>
+                                </div>
+                            </div>
+                            <div class="form-group col-lg-12 mx-auto mb-0">
+                                <button class="btn btn-primary btn-block py-2" [disabled]="!form.valid">GET FREE
+                                    TRIAL</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<ngx-spinner bdColor="rgba(51, 51, 51, 0.8)" size="default" type="ball-spin-clockwise">
+    <p style="color: white">Please Wait while processing your payment. </p>
+</ngx-spinner>
